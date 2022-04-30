@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlb.h>
+
+int readM();
+
+int main(){
+
+  int A[10][10];
+  int B[10][10];
+  int M1,N1,M2,N2; //matrix demension
+  int i=0, j=0, k=0 ,l=0 ,p=-1;
+  
+  printf("give the first matrix");
+  readM(A);
+  printf("give the second matrix");
+  readm(B);
+  
+  while(i<M1)do{
+    while(j<N1 && A[i][j] != B[1][1])do{
+      j++;
+    }
+    
+    if(A[i][j] = B[1][1]){
+      p = j;
+    }
+  
+    i++;
+  }
+
+  if(p = -1){
+    return printf("the matrix is not included");
+    }
+ 
+  while(k <= M2)do{
+    while(l<=N2 && A[i][j] = B[k][l])do{
+      j++;
+    }
+    
+    if(A[i][j] != B[k][l]){
+      return printf("the matrix is not included");
+    }
+   
+  i++; j=p;
+  }
+  
+return 0;
+}
+
+
+
+
+
+//function to read the matrix
+readM(){
+  int i, j, lines, columns, *intMatrix;
+
+  printf("Type the matrix lines:\t");
+  scanf("%d", &lines);
+  printf("Type the matrix columns:\t");
+  scanf("%d", &columns);
+
+  intMatrix = (int *)malloc(lines * columns * sizeof(int)); 
+
+  for (i = 0; i < lines; ++i)
+  {
+      for (j = 0; j < columns; ++j)
+      {
+        printf("Type a number for line: %d, column: %d\t", i+1, j+1);
+        scanf("%d", &intMatrix[i][j]);
+      }
+  }
+}
